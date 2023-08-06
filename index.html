@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pinterest</title>
+    <meta
+      property="description"
+      name="description"
+      content="Discover recipes, home ideas, style inspiration and other ideas to try."
+    />
+    <link rel="icon" href="https://s.pinimg.com/webapp/favicon-56d11a6a.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <!-- Logo (SVG copiado de la página de Pinterest)-->
+          <svg
+            class="logo"
+            height="24"
+            width="24"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            aria-label=""
+            role="img"
+          >
+            <path
+              d="M0 12c0 5.123 3.211 9.497 7.73 11.218-.11-.937-.227-2.482.025-3.566.217-.932 1.401-5.938 1.401-5.938s-.357-.715-.357-1.774c0-1.66.962-2.9 2.161-2.9 1.02 0 1.512.765 1.512 1.682 0 1.025-.653 2.557-.99 3.978-.281 1.189.597 2.159 1.769 2.159 2.123 0 3.756-2.239 3.756-5.471 0-2.861-2.056-4.86-4.991-4.86-3.398 0-5.393 2.549-5.393 5.184 0 1.027.395 2.127.889 2.726a.36.36 0 0 1 .083.343c-.091.378-.293 1.189-.332 1.355-.053.218-.173.265-.4.159-1.492-.694-2.424-2.875-2.424-4.627 0-3.769 2.737-7.229 7.892-7.229 4.144 0 7.365 2.953 7.365 6.899 0 4.117-2.595 7.431-6.199 7.431-1.211 0-2.348-.63-2.738-1.373 0 0-.599 2.282-.744 2.84-.282 1.084-1.064 2.456-1.549 3.235C9.584 23.815 10.77 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0 0 5.373 0 12"
+            ></path>
+          </svg>
+        </a>
+
+        <!--Responsive Navbar, ejemplo copiado de GetBoostrap.com / Docs / Navbar -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Le quité me-auto (margin-right: auto) para que no aviente todo lo otro a la derecha -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Create
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Create Idea Pin</a></li>
+                <li><a class="dropdown-item" href="#">Create Pin</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Search form, le puse flex-grow-1 para que tome el máximo espacio disponible -->
+          <form class="d-flex flex-grow-1" role="search">
+            <input
+              class="form-control me-2 px-4 py-3 text-bg-dark border-dark rounded-pill"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+
+          <!-- Otro nav para los íconos de la derecha. 
+                    .align-items-center centra los íconos verticalmente. 
+                    .d-flex para que los muestre horizontalmente -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li>
+              <a class="nav-link" href="">
+                <svg
+                  class="gUZ ztu U9O kVc"
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  aria-label=""
+                  role="img"
+                >
+                  <path
+                    d="M12 24c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3zm7-10.83c1.58 1.52 2.67 3.55 3 5.83H2c.33-2.28 1.42-4.31 3-5.83V7c0-3.87 3.13-7 7-7s7 3.13 7 7v6.17z"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+
+            <li>
+              <a class="nav-link" href="">
+                <svg
+                  class="Hn_ gUZ ztu U9O kVc"
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  aria-label=""
+                  role="img"
+                >
+                  <path
+                    d="M18 12.5a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18 12.5m-6 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 12 12.5m-6 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 6 12.5M12 0C5.925 0 1 4.925 1 11c0 2.653.94 5.086 2.504 6.986L2 24l5.336-3.049A10.93 10.93 0 0 0 12 22c6.075 0 11-4.925 11-11S18.075 0 12 0"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  alt="Jaime S"
+                  class="rounded-circle"
+                  src="https://i.pinimg.com/75x75_RS/8a/f3/8c/8af38c9ef6e0e91972ecd15644757bc2.jpg"
+                  width="24"
+                  height="24"
+                />
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Create Idea Pin</a></li>
+                <li><a class="dropdown-item" href="#">Create Pin</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main my-4">
+      <!-- El container del contenido -->
+      <div class="container-fluid">
+        <!-- Alert de GetBootstrap.com / Docs / Alerts -->
+        <div
+          class="alert alert-dark alert-dismissible fade show mb-4"
+          role="alert"
+        >
+          <!-- Asignarle flex para que los ponga horizontalmente.
+                    .align-items-center para que salgan verticalmente centrados.
+                    .justify-content-between para que pegue los elementos a los lados del container -->
+          <div class="d-flex align-items-center justify-content-between">
+            <!-- .flex-grow-1 para que se estire al máximo -->
+            <div class="flex-grow-1">
+              <strong>Holy guacamole!</strong>
+              <p>
+                Aww yeah, you successfully read this important alert message.
+                This example text is going to run a bit longer so that you can
+                see how spacing within an alert works with this kind of content.
+              </p>
+            </div>
+
+            <!-- .flex-shrink para indicar que este se tiene que achicar (lo contrario al de arriba). -->
+            <div class="flex-shrink-1">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Div para poner el contenido de grid-->
+        <section class="masonry">
+          <!-- .row para definir el grid
+                     .data-masonry de aquí: https://getbootstrap.com/docs/5.0/examples/masonry/ -->
+          <div class="row" data-masonry='{"percentPosition": true }'>
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x300"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x250"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x250"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x250"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x300"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x250"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x300"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x250"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x250"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x250"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x300"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x250"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6 col-lg-3 mb-1 mb-sm-4">
+              <div class="card border-white">
+                <img
+                  src="https://placehold.co/400x400"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+      integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </body>
+</html>
